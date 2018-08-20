@@ -112,3 +112,42 @@ try {
 } catch (e) {
   console.log(e.message);
 }
+
+//----------------------------------------------------------
+
+const rps = (num) => {
+    if (num !== 1 && num !== 2 && num !== 3) {
+        throw new Error('Choose a valid Number')
+    }
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    console.log(`computer has ${randomNo}`)
+
+    if (num === 1 && randomNo === 1) {
+        return "It's a tie"
+    } else if (num === 1 && randomNo === 2) {
+        return "You lost"
+    } else if (num === 1 && randomNo === 3) {
+        return "You win"
+    } else if (num === 2 && randomNo === 1) {
+        return "You win"
+    } else if (num === 2 && randomNo === 2) {
+        return "It's a tie"
+    } else if (num === 2 && randomNo === 3) {
+        return "You lost"
+    } else if (num === 3 && randomNo === 1) {
+        return "You lost"
+    } else if (num === 3 && randomNo === 2) {
+        return "You win"
+    } else if (num === 3 && randomNo === 3) {
+        return "It's a tie"
+    }
+}
+
+try {
+    const playGame = rps(2);
+    console.log(playGame);
+} catch(e) {
+    console.error(e.message)
+}
+
+//-----------------------------------END--
