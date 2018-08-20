@@ -30,26 +30,23 @@ console.log(beyond(20));
 
 //------------------------
 
-const decode = (word) => {
-    const wordArray = word.split(' ');
+const decode = (message) => {
+    const wordArray = message.split(' ');
     console.log(wordArray);
     const newMessage = [];
 
     for (let i = 0; i < wordArray.length; i ++) {
-        if (wordArray[i].charAt(0) === 'a') {
-             newMessage.push(wordArray[i].charAt(1));
-        }
-    
-        if (wordArray[i].charAt(0) === 'b') {
-            newMessage.push(wordArray[i].charAt(2));
-        }
-    
-        if (wordArray[i].charAt(0) === 'c') {
-            newMessage.push(wordArray[i].charAt(3));
-        }
-    
-        if (wordArray[i].charAt(0) === 'd') {
-            newMessage.push(wordArray[i].charAt(4));
+        const word = wordArray[i];
+        const firstChar = word.charAt(0);
+
+        if (firstChar === 'a') {
+             newMessage.push(word.charAt(1));
+        } else if (firstChar === 'b') {
+            newMessage.push(word.charAt(2));
+        } else if (firstChar === 'c') {
+            newMessage.push(word.charAt(3));
+        } else if (firstChar === 'd') {
+            newMessage.push(word.charAt(4));
         } else {
             newMessage.push(' ');
         }
